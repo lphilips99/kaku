@@ -10,5 +10,7 @@ import com.stringauto.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	Optional<User> findByUsername(String userName);
+	
+	
 	User findById(Integer id);
 }

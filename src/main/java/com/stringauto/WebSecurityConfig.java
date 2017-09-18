@@ -28,9 +28,9 @@ import com.stringauto.security.jwt.JwtTokenAuthenticationProcessingFilter;
 import com.stringauto.security.jwt.SkipPathRequestMatcher;
 import com.stringauto.security.jwt.TokenExtractor;
 
-@Configuration
+
 @EnableWebSecurity
-@EnableAutoConfiguration
+
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 

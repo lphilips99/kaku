@@ -48,7 +48,9 @@ public class UserController {
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET)
 	public ResponseEntity<User> getUser(@PathVariable("id") int id) throws Exception {
 
+		
 		User user = userService.findById(id);
+		
 		if (user == null) {
 			throw new Exception("User not found");
 			
@@ -56,24 +58,21 @@ public class UserController {
 		return new ResponseEntity<User>(user, HttpStatus.OK);
 		
 	}
-	
-	
-	
-
-
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST)
-	public User createUser(User u) {
-		return new User();
+	public ResponseEntity<User> createUser(User u) {
+		return new ResponseEntity<User>(new User(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.PUT)
-	public List<User> modifyUser(@PathVariable("id") int id) {
-		return new ArrayList<User>();
+	public ResponseEntity<List<User>> modifyUser(@PathVariable("id") int id) {
+		return new ResponseEntity<List<User>>(new ArrayList<>(), HttpStatus.OK);
+		
 	}
 
 	@RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
-	public List<User> deleteUser(@PathVariable("id") int id) {
-		return new ArrayList<User>();
+	public ResponseEntity<User> deleteUser(@PathVariable("id") int id) {
+		return new ResponseEntity<User>(new User(), HttpStatus.OK);
+
 	}
 }

@@ -1,16 +1,15 @@
 package com.stringauto.security.jwt;
 
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 
-	import org.springframework.boot.context.properties.ConfigurationProperties;
-	import org.springframework.context.annotation.Configuration;
-
-	@Configuration
-	@ConfigurationProperties(prefix = "jwt")
-	public class JwtSettings {
+@Configuration
+@ConfigurationProperties(prefix = "spring.jwt")
+public class JwtSettings {
 	    /**
 	     * {@link JwtToken} will expire after this time.
 	     */
-	    private Integer tokenExpirationTime;
+		private Integer tokenExpirationTime;
 
 	    /**
 	     * Token issuer.
